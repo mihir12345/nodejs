@@ -1,0 +1,13 @@
+
+const EventEmitter= require('events')
+
+//creating a class
+class MyEvent extends EventEmitter{}
+
+
+const myEvent = new MyEvent();
+
+myEvent.on(`event`,()=>console.log(`fired event`));
+
+myEvent.emit(`event`);
+
