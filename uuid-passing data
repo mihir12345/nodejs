@@ -1,0 +1,30 @@
+
+
+// uuid passing message  logger.js
+const EventEmitter=require('events')
+const uuid= require('uuid');
+
+class logger extends EventEmitter{
+    log(msg){
+       this.emit('message',{id:uuid.v4(),msg});
+
+    }
+
+
+}
+
+module.exports=logger;
+
+
+
+//index.js
+
+
+const Logger= require('./logger')
+
+//we extetiate class
+const logger = new Logger();
+
+logger.on('message',(data)=>console.log(`this is it `, data))
+
+logger.log('hello world')
