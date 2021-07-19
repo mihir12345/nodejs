@@ -1,0 +1,24 @@
+
+
+const url= require('url')
+const myUrl= new URL('https://www.finechips.online/index.html?id=100&status=active');
+
+
+console.log(myUrl.href)
+
+console.log(myUrl.host)
+
+console.log(myUrl.hostname)
+
+console.log(myUrl.pathname)
+
+console.log(myUrl.search)
+
+console.log(myUrl.searchParam)
+
+myUrl.searchParams.append('and', '123')
+console.log(myUrl.searchParams)
+
+myUrl.searchParams.forEach((name,value)=>console.log(`${name}:${value}`));
+
+
